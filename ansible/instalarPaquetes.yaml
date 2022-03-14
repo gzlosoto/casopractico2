@@ -1,0 +1,9 @@
+---
+
+- name: Instalar Paquetes
+  become: true
+  hosts: all
+  gather_facts: false
+  roles:
+   #- instalar
+   - services

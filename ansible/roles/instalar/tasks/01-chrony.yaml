@@ -1,0 +1,17 @@
+---
+
+- name: Configurar zona horaria
+  ansible.builtin.command: timedatectl set-timezone Europe/Madrid
+
+- name: Instalar paquete Chrony
+  dnf:
+    name: 'chrony'
+    state: latest
+
+- name: Restart chronyd
+  service:
+   name: chronyd
+   state: restarted
+
+- name: Turning "set-ntp" on
+  command: /usr/bin/timedatectl set-ntp on

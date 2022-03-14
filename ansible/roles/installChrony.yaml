@@ -1,6 +1,0 @@
----
-
--name : Instalar paquetes Chrony
-dnf:
-  name: 'chrony'
-  state: latest
